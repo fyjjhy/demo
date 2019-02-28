@@ -1,10 +1,8 @@
 package stream;
 
-import java.io.*;
-
 import org.apache.commons.io.IOUtils;
 
-import stream.common.CommonConstant;
+import java.io.*;
 
 /**
  * <Description> BufferedOutputStream和BufferedInputStream包装流<br>

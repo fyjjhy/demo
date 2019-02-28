@@ -1,6 +1,8 @@
 package stream;
 
-import java.io.IOException;
+import thread.ReadThread;
+import thread.WriteThread;
+
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
@@ -24,8 +26,12 @@ public class PipedStream {
 		// 输入流与输出流连接
 		try {
 			pipedInputStream.connect(pipedOutputStream);
-		} catch (IOException e) {
-			e.printStackTrace();
+			ReadThread readThread = new ReadThread(pipedInputStream);
+			WriteThread writeThread = new WriteThread(pipedOutputStream);
+			new Thread(readThread).start();
+			new Thread(writeThread).start();
+		} catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 }

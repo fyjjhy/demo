@@ -3,7 +3,18 @@ package thread;
 import java.io.PipedInputStream;
 
 /**
- * <Description> <br>
+ * <Description>
+ * 方式一:
+ * 1.开始时，管道输出流阻塞，执行管道输入流
+ * 2.管道输入流读取数据时发现，没有数据可以读取
+ * 3.执行管道输出流写入数据，如果没有可写入数据
+ * 4.执行管道输入流抛出异常
+ * 方式二:
+ * 1.开始时，管道输出流阻塞，执行管道输入流
+ * 2.管道输入流读取数据时发现，没有数据可以读取
+ * 3.执行管道输出流写入数据
+ * 4.执行管道输入流读取数据，解除read阻塞
+ * <br>
  *
  * @author 付永杰<br>
  * @version 1.0<br>
@@ -22,7 +33,17 @@ public class ReadThread implements Runnable {
 
 	@Override
 	public void run() {
-		say("R:读取前没有数据,阻塞中...等待数据传过来再输出到控制台...");
+		try {
+			say("R:读取前没有数据,阻塞中...等待数据传过来再输出到控制台...");
+			byte[] buff = new byte[1024];
+			int len = pipedInputStream.read(buff);
+			say("R:读取数据成功，阻塞解除...");
+			String s = new String(buff, 0, len);
+			System.out.println(s);
+			pipedInputStream.close();
+		} catch (Exception e) {
+			throw new RuntimeException("R:管道读取流失败!");
+		}
 	}
 
 	// 打印
