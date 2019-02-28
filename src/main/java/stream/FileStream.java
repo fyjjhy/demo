@@ -1,6 +1,5 @@
 package stream;
 
-import com.hbasesoft.framework.common.utils.PropertyHolder;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;

@@ -1,9 +1,9 @@
-package stream.objectStream;
+package stream;
+
+import common.CommonConstant;
+import entity.Person;
 
 import java.io.*;
-
-import entity.Person;
-import stream.common.CommonConstant;
 
 /**
  * <Description> ObjectInputStream和ObjectOutputStream<br>
@@ -12,7 +12,7 @@ import stream.common.CommonConstant;
  * @version 1.0<br>
  * @taskId <br>
  * @CreateDate 2019/2/28
- * @see stream.objectStream <br>
+ * @see ObjectStream <br>
  * @since V1.0<br>
  */
 public class ObjectStream {

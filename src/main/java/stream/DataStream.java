@@ -1,10 +1,9 @@
-package stream.DataStream;
+package stream;
 
-import java.io.*;
-
+import common.CommonConstant;
 import org.apache.commons.io.IOUtils;
 
-import stream.common.CommonConstant;
+import java.io.*;
 
 /**
  * <Description> DataOutputStream和DataInputStream(包装流)<br>

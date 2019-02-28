@@ -1,4 +1,4 @@
-package stream.pipedStream;
+package stream;
 
 import java.io.IOException;
 import java.io.PipedInputStream;
@@ -11,7 +11,7 @@ import java.io.PipedOutputStream;
  * @version 1.0<br>
  * @taskId <br>
  * @CreateDate 2019/2/28
- * @see stream.pipedStream <br>
+ * @see stream.PipedStream <br>
  * @since V1.0<br>
  */
 public class PipedStream {

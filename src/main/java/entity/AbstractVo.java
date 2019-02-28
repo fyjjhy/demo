@@ -1,11 +1,10 @@
 package entity;
 
-import java.io.Serializable;
-
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import common.DateConstant;
 
-import stream.common.DateConstant;
+import java.io.Serializable;
 
 /**
  * <Description> <br>

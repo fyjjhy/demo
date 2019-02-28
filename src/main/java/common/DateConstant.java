@@ -1,4 +1,4 @@
-package stream.common;
+package common;
 
 /**
  * <Description> <br>
@@ -7,7 +7,7 @@ package stream.common;
  * @version 1.0<br>
  * @taskId <br>
  * @CreateDate 2019/2/28
- * @see stream.common <br>
+ * @see DateConstant <br>
  * @since V1.0<br>
  */
 public interface DateConstant {

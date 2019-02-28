@@ -1,4 +1,4 @@
-package main.java.stream;
+package stream;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream;
  * @version 1.0<br>
  * @taskId <br>
  * @CreateDate 2019年02月27日 <br>
- * @see main.java.stream <br>
+ * @see ByteArrayStream <br>
  * @since V1.0 <br>
  */
 public class ByteArrayStream {

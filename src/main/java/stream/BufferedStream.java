@@ -1,4 +1,4 @@
-package stream.bufferedStream;
+package stream;
 
 import java.io.*;
 
@@ -13,7 +13,7 @@ import stream.common.CommonConstant;
  * @version 1.0<br>
  * @taskId <br>
  * @CreateDate Create in 2019/2/28
- * @see stream.bufferedStream <br>
+ * @see stream.BufferedStream <br>
  * @since V1.0<br>
  */
 public class BufferedStream {
