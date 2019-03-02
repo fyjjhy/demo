@@ -35,7 +35,7 @@ public class FileStream {
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(tempFile);
-            fos.write("hello".getBytes());
+            fos.write("实际读取到的字节量".getBytes());
             fos.flush();
         }
         catch (Exception e) {
@@ -49,7 +49,7 @@ public class FileStream {
 
         try {
             fis = new FileInputStream(tempFile);
-            byte[] buff = new byte[1024];
+            byte[] buff = new byte[3];
             int len = fis.read(buff);
             String str = new String(buff, 0, len);
             System.out.println(str);
