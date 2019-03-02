@@ -1,5 +1,9 @@
 package stream;
 
+import DateUtil.DateUtil;
+import common.CommonConstant;
+import common.DateConstant;
+import funcUtil.FileUtil;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;
@@ -19,25 +23,25 @@ import java.io.FileOutputStream;
 public class FileStream {
 
     public static void main(String[] args) {
-        String path = new StringBuilder().append("D:").append(File.separator).append("stream").append(File.separator).append("fileStream").toString();
-        File file = new File(path);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-
+        // 路径名
+        String path = new StringBuilder().append(CommonConstant.FILE_PATH).append("fileStream").toString();
+        // 创建目录
+        FileUtil.newFolder(path);
         // 文件名称
-        String fileName = System.currentTimeMillis() + "";
-
+        String fileName = DateUtil.data2String(DateUtil.getCurrentDate(), DateConstant.DATETIME_FORMAT_14);
         File tempFile = new File(path, fileName + ".txt");
 
+        // 声明输出流
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(tempFile);
             fos.write("hello".getBytes());
             fos.flush();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println(e);
-        } finally {
+        }
+        finally {
             IOUtils.closeQuietly(fos);
         }
 

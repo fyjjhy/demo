@@ -12,7 +12,7 @@ import java.io.*;
  * @see funcUtil <br>
  * @since V1.0<br>
  */
-public final class FuncUtil {
+public final class FileUtil {
 
 	// 新建目录
 	public static void newFolder(String newFolder) {

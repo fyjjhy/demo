@@ -1,6 +1,9 @@
 package stream;
 
+import DateUtil.DateUtil;
 import common.CommonConstant;
+import common.DateConstant;
+import funcUtil.FileUtil;
 
 import java.io.*;
 
@@ -21,14 +24,19 @@ public class FileCharacterStream {
         // 添加路径
         String path = new StringBuilder().append(CommonConstant.FILE_PATH)
                 .append("file").toString();
-        File file = new java.io.File(path);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
+        // 创建目录
+        FileUtil.newFolder(path);
         // 添加文件名
-        String fileName = System.currentTimeMillis() + "";
+        String fileName = DateUtil.data2String(DateUtil.getCurrentDate(), DateConstant.DATETIME_FORMAT_14);
         File tempFile = new File(path, fileName + ".txt");
         // 定义输出流
+//        try {
+//            Writer writer = new FileWriter(tempFile);
+//            writer.write("对文本文件(保存字符的文件)进行以字符为单位写入!");
+//            writer.flush();
+//        } catch (IOException e) {
+//            throw new RuntimeException("FileWriter写入失败!", e);
+//        }
         try (
                 Writer writer = new FileWriter(tempFile);
         ) {
