@@ -1,5 +1,7 @@
 package stream;
 
+import DateUtil.DateUtil;
+
 /**
  * <Description> <br>
  *
@@ -19,5 +21,8 @@ public class TestStream {
             System.out.println(b[i]);
         }
         System.out.println(b.length);
+
+        String dateStr = DateUtil.date2String(DateUtil.getCurrentDate());
+        System.out.println(dateStr);
     }
 }
