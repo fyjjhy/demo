@@ -23,7 +23,11 @@ public class TestFinal1 {
         this.age = age;
     }
 
-//    public void testFinal() {
+    public int getAge() {
+        return age;
+    }
+
+    //    public void testFinal() {
 //        age = 99;
 //    }
 public static void main(String[] args) {

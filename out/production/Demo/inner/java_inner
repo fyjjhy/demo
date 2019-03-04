@@ -18,4 +18,21 @@
 外部类可以访问内部类的所有方法与属性，包括私有方法与属性。
 1.创建实例
 2.内部类中的this
-3.
+3.外部类访问内部类
+4.内部类向上转型
+5.方法中的类
+6.静态内部类
+7.内部类标识符
+8.为何使用内部类
+静态内部类总结:
+1.静态内部类可以有静态成员(方法，属性)，而非静态内部类则不能有静态成员(方法，属性)。
+2.静态内部类只能够访问外部类的静态成员，而非静态内部类则可以访问外部类的所有成员(方法，属性)。
+3.实例化一个非静态的内部类方法:
+a.先实例化一个外部类的对象实例
+TestOuterClass outerClass = new TestOuterClass();
+b.通过外部类的对象实例生成
+TestOuterClass.InnerClass no_static_inner = outerClass.new InnerClass();
+4.实例化一个静态内部类方法:
+a.不依赖于外部类的实例，直接实例化内部类对象
+TestOuterClass.InnerStaticClass static_inner = new TestOuterClass.InnerStaticClass();
+5.调用静态内部类的静态方法或静态变量，通过类名直接调用

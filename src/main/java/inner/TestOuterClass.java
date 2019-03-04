@@ -29,13 +29,13 @@ public class TestOuterClass {
         System.out.println("调用非静态内部类的方法" + no_static_inner.getKey());
 
         // 调用静态内部类的静态变量
-        System.out.println("调用静态内部类的静态变量" + InnerStaticClass.STATIC_VALUE);
+        System.out.println("调用静态内部类的静态变量" + TestOuterClass.InnerStaticClass.STATIC_VALUE);
         // 不依赖外部类实例，直接实例化静态内部类
         TestOuterClass.InnerStaticClass static_inner = new TestOuterClass.InnerStaticClass();
         // 调用静态内部类的非静态方法
         System.out.println("调用静态内部类的非静态方法" + static_inner.getValue());
         // 调用静态内部类的静态方法
-        System.out.println("调用静态内部类的静态方法" + TestOuterClass.InnerStaticClass.getMessage());
+        System.out.println("调用静态内部类的静态方法" + InnerStaticClass.getMessage());
     }
 
     private class InnerClass {

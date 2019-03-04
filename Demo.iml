@@ -4,6 +4,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../Demo">
       <sourceFolder url="file://$MODULE_DIR$/../Demo/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../Demo/src/main/test" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -29,6 +30,15 @@
       <library>
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.6/fastjson-1.2.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
