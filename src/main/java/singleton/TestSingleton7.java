@@ -24,6 +24,14 @@ public class TestSingleton7 {
     private TestSingleton7() {
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public static TestSingleton7 getInstance() {
         if (testSingleton7 == null) {
             synchronized (TestSingleton7.class) {
