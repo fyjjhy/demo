@@ -1,5 +1,7 @@
 package singleton;
 
+import java.io.Serializable;
+
 /**
  * <Description> 静态内部类<br>
  *
@@ -10,7 +12,9 @@ package singleton;
  * @see singleton <br>
  * @since V1.0 <br>
  */
-public class TestSingleton5 {
+public class TestSingleton5 implements Serializable {
+
+    private static final long serialVersionUID = -2341790232546977277L;
 
     private static class LazyHolder { // 静态内部类
         private static final TestSingleton5 INSTANCE = new TestSingleton5();
@@ -27,5 +31,11 @@ public class TestSingleton5 {
     public static void main(String[] args) {
         TestSingleton5 testSingleton5 = TestSingleton5.getInstance();
         System.out.println(testSingleton5);
+    }
+
+    // 该方法会在反序列化时被调用，该方法不是接口定义的方法，有点约定俗成的感觉
+    protected Object readResolve() {
+        System.out.println("调用了readResolve方法!");
+        return LazyHolder.INSTANCE;
     }
 }
