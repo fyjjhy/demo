@@ -18,7 +18,7 @@ public class TestStatic1 {
 
     public TestStatic1(int age) {
         this.age = age;
-        System.out.println(numOfCats);
+        System.out.println(++numOfCats);
     }
 
     public static void main(String[] args) {
