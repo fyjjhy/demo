@@ -1,0 +1,12 @@
+2019-03-06 21:17:22
+什么是线程安全?
+如果代码在多线程下执行和在单线程下执行永远都能获得一样的结果，那么代码就是线程安全的。
+线程安全级别:
+1.不可变
+a.final修饰的类，如String、Integer、Long都是不可变类
+2.绝对线程安全
+a.CopyOnWriteArrayList、CopyOnWriteArraySet是绝对线程安全的类
+3.线程安全
+Vector、HashTable、StringBuffer是线程安全的
+4.线程非安全
+StringBuilder、ArrayList、HashMap都是非线程安全的

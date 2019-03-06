@@ -32,6 +32,20 @@ a.jcmd PID Thread.print
 5.BLOCKED，在分析死锁的同时，查找他们试图获取锁的阻塞线程和资源
 5.堆栈信息:在这里如果线程在等待任何锁，我们可以看到线程获得锁的地方
 在Linux终端下执行"jvisualvm"命令即可进入VisualVM控制台
-
+-----------------------------------------------------
+2019-03-06 16:14:25
 dump文件中的线程状态:
-
+1.死锁:Deadlock(重点关注)
+2.暂停:Suspended
+3.停止:Parked
+4.阻塞:Blocked(重点关注)
+5.对象等待中:Object.wait()或TIMED_WAITING
+6.等待资源:Waiting on condition(重点关注)
+7.等待获取监视器:Waiting on monitor entry(重点关注)
+8.执行中:Runnable
+线程状态是阻塞状态，说明线程等待资源超时
+waiting to lock <0x00000000acf4d0c0>:线程在等待给0x00000000acf4d0c0地址上锁
+waiting for monitor entry:此线程通过synchronized(obj){...}申请进入临界区，
+从而进入"Entry Set"队列，但该obj对应的monitor被其他线程拥有，
+所以本线程在Entry Set队列中等待。
+parking:线程处于挂起中

@@ -3,4 +3,6 @@ https://blog.csdn.net/github_37515779/article/details/79953788
 2.锁的细粒度
 3.重排序
 4.静态初始化器
-5.
+5.原子操作
+6.fail-fast机制
+7.
