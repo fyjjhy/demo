@@ -10,3 +10,4 @@ a.CopyOnWriteArrayList、CopyOnWriteArraySet是绝对线程安全的类
 Vector、HashTable、StringBuffer是线程安全的
 4.线程非安全
 StringBuilder、ArrayList、HashMap都是非线程安全的
+------------------------------------------------
