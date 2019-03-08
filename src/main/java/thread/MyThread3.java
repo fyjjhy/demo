@@ -26,6 +26,47 @@ public class MyThread3 {
     final Condition notEmpty = lock.newCondition();
     final Object[] items = new Object[100];
     int putptr, takeptr, count;
+
+    public Lock getLock() {
+        return lock;
+    }
+
+    public Condition getNotFull() {
+        return notFull;
+    }
+
+    public Condition getNotEmpty() {
+        return notEmpty;
+    }
+
+    public Object[] getItems() {
+        return items;
+    }
+
+    public int getPutptr() {
+        return putptr;
+    }
+
+    public void setPutptr(int putptr) {
+        this.putptr = putptr;
+    }
+
+    public int getTakeptr() {
+        return takeptr;
+    }
+
+    public void setTakeptr(int takeptr) {
+        this.takeptr = takeptr;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public void put(Object x) throws InterruptedException {
         lock.lock();
         try {

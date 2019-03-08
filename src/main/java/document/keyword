@@ -5,4 +5,5 @@ https://blog.csdn.net/github_37515779/article/details/79953788
 4.静态初始化器
 5.原子操作
 6.fail-fast机制
-7.
+7.AtomicInteger
+8.

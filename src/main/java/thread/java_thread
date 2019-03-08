@@ -13,3 +13,24 @@ Lock接口中并没有直接操作等待唤醒的方法，而是将这些方法�
 这个对象就是Condition，经Object中的方法进行单独封装，并提供功能一致的方法await()、
 signal()、signalAll()。
 同步是隐士的锁操作，而Lock对象是显示的锁操作。
+-------------------------------------------
+2019-03-08 08:44:46
+读写锁:允许多个线程并发的访问共享资源。
+使用Lock的固定格式:
+Lock lock = ...;
+lock.lock();
+try {
+  // access the resource protected by this lock
+} finally { // 必须使用try，最后在finally里面释放锁
+  lock.unlock();
+}
+不要将获取锁的过程写在try块中，因为如果在获取锁(自定义锁的实现)时发生了异常，异常抛出的同时，也会导致锁无故释放。
+一般情况下，读写锁的性能比排它锁好。
+读锁与写锁是互斥的。
+独占访问，并发访问，读锁。
+手牵手，链锁方式。
+非阻塞的获取锁:tryLock()
+中断获取锁:lockInterruptibly()
+超时获取锁:tryLock(long, TimeUnit)
+volatile修饰变量，保证可见性，并不保证原子性。
+
