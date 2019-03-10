@@ -13,7 +13,7 @@ package thread;
 public class TestJoin {
 
     public static void main(String[] args) {
-        Thread t1 = new Thread() {
+        Thread t1 = new Thread("A") {
             @Override
             public void run() {
                 for (int i = 0; i <= 10; i++) {
@@ -28,7 +28,7 @@ public class TestJoin {
             }
         };
 
-        Thread t2 = new Thread() {
+        Thread t2 = new Thread("B") {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName() + ":等待图片下载完毕");

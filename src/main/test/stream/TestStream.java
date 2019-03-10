@@ -2,6 +2,8 @@ package stream;
 
 import DateUtil.DateUtil;
 
+import java.util.UUID;
+
 /**
  * <Description> <br>
  *
@@ -24,5 +26,7 @@ public class TestStream {
 
         String dateStr = DateUtil.date2String(DateUtil.getCurrentDate());
         System.out.println(dateStr);
+//        System.out.println(UUID.randomUUID().toString().replace("-", ""));
+//        System.out.println();
     }
 }
