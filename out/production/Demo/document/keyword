@@ -3,7 +3,7 @@ https://blog.csdn.net/github_37515779/article/details/79953788
 2.锁的细粒度
 3.重排序
 4.静态初始化器
-5.原子操作
+5.原子操作:不可中断的一个或者一系列操作。
 6.fail-fast机制
 7.AtomicInteger
 8.NoSQL
@@ -17,3 +17,7 @@ https://blog.csdn.net/github_37515779/article/details/79953788
 16.同步容器
 17.并发容器
 18.阻塞队列
+19.排它锁
+20.JIT编辑器
+21.缓存一致性协议
+22.
