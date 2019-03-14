@@ -20,4 +20,6 @@ https://blog.csdn.net/github_37515779/article/details/79953788
 19.排它锁
 20.JIT编辑器
 21.缓存一致性协议
-22.
+22.竞态条件
+23.临界区
+24.
