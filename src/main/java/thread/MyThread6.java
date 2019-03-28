@@ -1,7 +1,5 @@
 package thread;
 
-import com.hbasesoft.framework.common.utils.logger.LoggerUtil;
-
 /**
  * <Description> 现有线程T1、T2、T3，如何确保T2在T1之后执行，T3在T2之后执行<br>
  * 考点：
