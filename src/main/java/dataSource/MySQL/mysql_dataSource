@@ -1,0 +1,61 @@
+【主键 primary key】
+能够唯一标识表中某一行的属性或属性组。
+主键可以保证记录的唯一和主键域非空，数据库管理系统对于主键自动生成唯一索引，所以主键也是一个特殊的索引。
+【外键 foreign key】
+要删除一张表中的主键必须要确保其他表中没有相同的外键。
+【索引 index】
+用来快速地寻找那些具有特定值的记录。
+主要是为了检索方便，是为了加快访问速度，按一定规则创建的，一般起到排序作用。
+[例如]: 如果我们创建了name列的索引，MySQL将在索引中排序name列。
+唯一性索引与普通索引的区别：索引列的所有值都只能出现一次，即必须唯一。
+[总结]
+1.主键一定是唯一性索引，唯一性索引并不一定就是主键。
+2.一个表中可以由多个唯一性索引，但只能有一个主键。
+3.主键列不允许有空值，而唯一性索引列允许空值。
+4.主键可以被其他字段作外键引用，而索引不能作为外键引用。
+ALTER TABLE pc ADD CONSTRAINT fk_cpu_model // 1
+FOREIGN KEY (cpumodel) // 2
+REFERENCES parts(model) // 3
+ON UPDATE CASCADE; // 4
+第一行是说要为Pc表设置外键，给这个外键起一个名字叫做fk_cpu_model；
+第二行是说将本表的cpumodel字段设置为外键；
+第三行是说这个外键受到的约束来自于Parts表的model字段；
+第四行是说在主表更新时，子表(们)产生连锁更新动作，即"级联"操作。
+CASCADE;// 级联操作
+RESTRICT;// 禁止主表变更
+SET NULL;// 子表相应字段设置为空
+所有MySQL索引都以B-树的形式保存。
+【索引类型】
+[普通索引]
+创建索引：CREATE INDEX <索引的名字> ON tablename (列的列表);
+修改表：ALTER TABLE tablename ADD INDEX [索引的名字] (列的列表);
+创建表的时候指定索引：CREATE TABLE tablename ( [...], INDEX [索引的名字] (列的列表) );
+[唯一性索引]
+创建索引：CREATE UNIQUE INDEX <索引的名字> ON tablename (列的列表);
+修改表：ALTER TABLE tablename ADD UNIQUE [索引的名字] (列的列表);
+创建表的时候指定索引：CREATE TABLE tablename ( [...], UNIQUE [索引的名字] (列的列表) );
+[主键]
+主键一般在创建表的时候指定,每个表只能有一个主键。
+修改表：ALTER TABLE tablename ADD PRIMARY KEY(列);
+创建表的时候指定索引：CREATE TABLE tablename ( [...], PRIMARY KEY (列) );
+[全文索引]
+全文索引的索引类型为FULLTEXT。
+全文索引可以在VARCHAR或者TEXT类型的列上创建。
+创建索引：CREATE INDEX
+修改表：ALTER TABLE
+创建表的时候指定索引：CREATE TABLE
+对于大规模的数据集，通过ALTER TABLE（或者CREATE INDEX）命令
+创建全文索引要比把记录插入带有全文索引的空表更快。
+[单列索引与多列索引]
+单列：
+ALTER TABLE people ADD INDEX firstname(firstname);
+多列：
+ALTER TABLE people ADD INDEX fname_lname_age (firstname, lastname, age);
+执行查询的时候，MySQL只能使用一个索引。
+【选择索引列】
+主要有两种类型的列：
+1.在where子句中出现的列。
+2.在join子句中出现的列。
+在许多场合，人们创建唯一索引的目的往往不是为了提高访问速度，而只是为了避免数据出现重复
+【链接】
+https://blog.csdn.net/duck_arrow/article/details/8264686
