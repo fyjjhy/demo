@@ -1,4 +1,6 @@
-package basics;
+package immutable;
+
+import immutable.CacheImmutale;
 
 /**
  * <Description> 缓存实例的不可变类<br>

@@ -1,4 +1,4 @@
-package basics;
+package entity;
 
 /**
  * <Description> <br>

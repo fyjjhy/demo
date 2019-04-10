@@ -1,6 +1,4 @@
-package basics;
-
-import org.apache.commons.lang.StringUtils;
+package immutable;
 
 import java.util.Objects;
 

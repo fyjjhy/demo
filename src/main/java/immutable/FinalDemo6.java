@@ -1,9 +1,12 @@
-package basics;
+package immutable;
+
+import entity.Name;
 
 /**
  * <Description> <br>
  * 【描述】
- * 如果引用类型的成员变量的类是可变的，就必须采取必要的措施来保护该成员变量所引用的对象不会被修改，这样才能创建真正的不可变类。
+ * 如果引用类型的成员变量的类是可变的，就必须采取必要的措施来保护该成员变量所引用的对象不会被修改，
+ * 这样才能创建真正的不可变类。
  * @author 付永杰<br>
  * @version 1.0<br>
  * @taskId <br>
@@ -15,14 +18,14 @@ public class FinalDemo6 {
 
     private final Name name;
 
-//    public FinalDemo6(Name name) {
-//        this.name = new Name(name.getFirstName(), name.getLastName());
-//    }
-
-
     public FinalDemo6(Name name) {
-        this.name = name;
+        this.name = new Name(name.getFirstName(), name.getLastName());
     }
+
+
+//    public FinalDemo6(Name name) {
+//        this.name = name;
+//    }
 
     public FinalDemo6() {
         this.name = new Name();
