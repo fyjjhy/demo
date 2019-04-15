@@ -24,11 +24,11 @@ public class ReflectionDemo6 {
 
     public String file() throws IOException {
         // src目录下，直接加载
-        String file = IOUtil.readFile(ReflectionDemo6.class.getClassLoader().getResource("reflex.ReflectionDemo6").getPath());
+        // String file = IOUtil.readFile(ReflectionDemo6.class.getClassLoader().getResource("reflex.ReflectionDemo6").getPath());
 
         // 放在内部文件夹，要写全路径
-//        InputStream inputStream1 = null;
-//        inputStream1 = this.getClass().getResourceAsStream("reflex.ReflectionDemo6.java");
-        return file;
+        InputStream inputStream = this.getClass().getResourceAsStream("reflex.ReflectionDemo6.java");
+        System.out.println(inputStream);
+        return null;
     }
 }

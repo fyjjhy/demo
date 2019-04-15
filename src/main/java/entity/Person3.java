@@ -16,8 +16,6 @@ import java.lang.reflect.Method;
  * @see entity <br>
  * @since V1.0 <br>
  */
-@Setter
-@Getter
 public class Person3 extends AbstractVo {
     private static final long serialVersionUID = -7453605133343315482L;
     String name;
@@ -31,6 +29,23 @@ public class Person3 extends AbstractVo {
 
     public Person3() {
         super();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @AgeValidator(min = 18, max = 35)
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override

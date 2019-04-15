@@ -10,6 +10,7 @@ import java.lang.reflect.TypeVariable;
 /**
  * <Description> Class<br>
  *一个类在JVM中只会有一个CLss实例
+ * 小写class表示一个类类型，大写Class表示这个类的名称
  * @author 付永杰<br>
  * @version 1.0<br>
  * @taskId <br>

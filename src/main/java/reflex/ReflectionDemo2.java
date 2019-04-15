@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 
 /**
- * <Description> <br>
+ * <Description> 通过Class类获取类对象<br>
  *
  * @author 付永杰<br>
  * @version 1.0<br>

@@ -1,5 +1,6 @@
 package reflex;
 
+import DateUtil.DateUtil;
 import entity.Person3;
 
 import java.lang.reflect.InvocationTargetException;
@@ -28,6 +29,9 @@ public class ReflectionDemo8 {
         invoke(object, "test", "wang", 1);
 
         invoke("entity.Person3", "test", "zhagn", 12);
+
+        Object result = invoke("java.text.SimpleDateFormat", "format", DateUtil.getCurrentDate());
+        System.out.println(result);
     }
 
     /**
