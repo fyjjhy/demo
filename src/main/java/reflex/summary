@@ -1,0 +1,34 @@
+[反射小结]
+1. Class:是一个类，一个描述类的类。
+    封装了描述方法的Method.
+    描述字段的Field.
+    描述构造器的Constructor等属性.
+
+2. 如何得到Class对象
+    Person.class
+    person.getClass()
+    Class.forName("entity.Person");
+
+3. 关于Method:
+    如何获取Method:
+        getDeclaredMethods:得到Method数组
+        getDeclaredMethod(String methodName, Class ...parameterTypes)
+
+    如何调用Method:
+        如何方法是private修饰的，需要先调用Method的setAccessible(true)，使其变为可访问
+        method.invoke(obj, Object ...args)
+
+4. 关于Field:
+    如何获取Field:getField(String fieldName)
+    如何获取Field的值:
+        setAccessible(true)
+        field.get(Object obj)
+    如何设置Field的值:
+        field.set(Object obj, Object var)
+
+5. 了解Constructor 和Annotation
+
+6. 反射和泛型:
+    getGenericSuperClass:获取带泛型参数的父类，返回值为:BaseDao<Employee, String>
+    Type的子接口:ParameterizedType
+    可以调用ParameterizedType的Type[] getActualTypeArguments()获取泛型参数的数组

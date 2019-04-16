@@ -1,4 +1,6 @@
-package funcUtil;
+package utils.funcUtil;
+
+import utils.DateUtil.DateUtil;
 
 import java.io.*;
 
@@ -9,7 +11,7 @@ import java.io.*;
  * @version 1.0<br>
  * @taskId <br>
  * @CreateDate 2019/3/1
- * @see funcUtil <br>
+ * @see DateUtil.funcUtil <br>
  * @since V1.0<br>
  */
 public final class FileUtil {

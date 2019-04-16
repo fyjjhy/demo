@@ -1,6 +1,6 @@
 package immutable;
 
-import DateUtil.DateUtil;
+import utils.DateUtil.DateUtil;
 
 import java.util.Date;
 
