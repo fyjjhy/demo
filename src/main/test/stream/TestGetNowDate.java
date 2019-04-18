@@ -1,6 +1,6 @@
 package stream;
 
-import DateUtil.DateUtil;
+import utils.DateUtil.DateUtil;
 import common.DateConstant;
 
 /**

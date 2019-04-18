@@ -1,6 +1,6 @@
 package lock;
 
-import DateUtil.DateUtil;
+import utils.DateUtil.DateUtil;
 import common.DateConstant;
 
 import java.util.concurrent.Semaphore;

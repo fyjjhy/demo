@@ -1,4 +1,4 @@
-package DateUtil;
+package utils.DateUtil;
 
 import common.DateConstant;
 import org.apache.commons.lang.StringUtils;
