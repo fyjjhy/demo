@@ -1,7 +1,5 @@
 package reflex;
 
-import com.hbasesoft.framework.common.utils.io.IOUtil;
-
 import java.io.IOException;
 import java.io.InputStream;
 
