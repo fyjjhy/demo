@@ -1,0 +1,6 @@
+【Spring Boot】
+    什么是Spring Boot
+        该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。
+    设计目的
+        简化新Spring应用的初始搭建以及开发过程。
+        Maven整合了所有的jar包，Spring Boot整合了所有的框架。
