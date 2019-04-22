@@ -111,6 +111,10 @@ https://blog.csdn.net/duck_arrow/article/details/8264686
     [删除过程]:每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存以便进行回滚操作。
     truncate: 删除表中数据，通过释放存储表数据所用的数据页来删除数据，并且只在事务日志中对记录页的释放。
     [truncate table]: 一次性从表中删除所有的数据并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。
+
+【yearweek|date_format】
+    yearweek: 一周的开始是星期日，一周的结束是星期六
+    date_format: 一周的开始是星期一，一周的结束是星期日
 【链接地址】
     redo log|undo log: https://www.jianshu.com/p/20e10ed721d0
                        https://cloud.tencent.com/developer/news/261952
