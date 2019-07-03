@@ -1,11 +1,11 @@
 package jdbc;
 
-import com.hbasesoft.framework.common.utils.CommonUtil;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import common.CommonUtil;
 
 /**
  * <Description> 测试结果集的用法<br>

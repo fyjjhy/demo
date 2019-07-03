@@ -25,7 +25,7 @@ public class ReflectionDemo3 {
         // 这种方式需要传进来一个对象，却不知道对象类型的时候使用
         Person3 person3 = new Person3();
         Class clazz2 = person3.getClass();
-        System.out.println("2.通过对象名:" + clazz2);
+        System.out.println("2.通过对象名:" + clazz2.getName());
         System.out.println(clazz1 == clazz2);
         // 上面这个列子意义不大，因为已经知道person类型是Person类，再这样写就没有必要的
         // 如果传进来的是一个Object类，这种做法就是应该的

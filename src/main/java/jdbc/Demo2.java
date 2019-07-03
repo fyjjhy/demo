@@ -1,11 +1,11 @@
 package jdbc;
 
-import com.hbasesoft.framework.common.utils.CommonUtil;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import common.CommonUtil;
 
 /**
  * <Description> 测试事务的基本概念及用法<br>

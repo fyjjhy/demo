@@ -1,9 +1,9 @@
 package jdbc;
 
-import com.hbasesoft.framework.common.utils.CommonUtil;
-
 import java.sql.*;
 import java.util.Random;
+
+import common.CommonUtil;
 
 /**
  * <Description> 测试时间处理(java.sql.Date,Time,Timestamp)<br>
