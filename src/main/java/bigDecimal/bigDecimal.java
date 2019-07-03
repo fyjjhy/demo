@@ -15,7 +15,13 @@ import java.math.BigDecimal;
 public class bigDecimal {
 
 	public static void main(String[] args) {
-		String cost = "1000";
-		System.out.println(new BigDecimal(cost).divide(new BigDecimal("100"), 2, BigDecimal.ROUND_UNNECESSARY));
+		Integer cost = 618;
+		System.out.println(new BigDecimal(cost).divide(new BigDecimal("1000"), 3, BigDecimal.ROUND_UNNECESSARY));
+
+		String couponsCost = new BigDecimal(1000 - cost).divide(new BigDecimal("1000"), 3, BigDecimal.ROUND_UNNECESSARY).toString();
+
+		System.out.println(couponsCost);
+
+
 	}
 }

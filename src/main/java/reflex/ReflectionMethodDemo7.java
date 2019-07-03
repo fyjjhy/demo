@@ -25,7 +25,7 @@ import java.util.Arrays;
  * @see reflex <br>
  * @since V1.0 <br>
  */
-public class ReflectionDemo7 {
+public class ReflectionMethodDemo7 {
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
         // 3.1如何描述方法-Method

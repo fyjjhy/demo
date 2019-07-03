@@ -1,6 +1,5 @@
 package reflex;
 
-import entity.Person;
 import entity.Person3;
 
 /**
@@ -19,24 +18,25 @@ import entity.Person3;
 public class ReflectionDemo3 {
 
     public static void main(String[] args) throws ClassNotFoundException {
-        Class clazz = null;
         // 1.通过类名
-        clazz = Person3.class;
-        System.out.println("1.通过类名:" + clazz);
+        Class clazz1 = Person3.class;
+        System.out.println("1.通过类名:" + clazz1);
         // 2.通过对象名
         // 这种方式需要传进来一个对象，却不知道对象类型的时候使用
         Person3 person3 = new Person3();
-        clazz = person3.getClass();
-        System.out.println("2.通过对象名:" + clazz);
+        Class clazz2 = person3.getClass();
+        System.out.println("2.通过对象名:" + clazz2);
+        System.out.println(clazz1 == clazz2);
         // 上面这个列子意义不大，因为已经知道person类型是Person类，再这样写就没有必要的
         // 如果传进来的是一个Object类，这种做法就是应该的
         Object object = new Person3();
-        clazz = object.getClass();
-        System.out.println("2.通过对象名:" + clazz);
+        Class clazz3 = object.getClass();
+        System.out.println("2.通过对象名:" + clazz3);
+        System.out.println(clazz1 == clazz3);
         // 3.通过全类名(会抛出异常)
         // 一般框架开发中这种用的比较多，因为配置文件中一般配的都是全类名，通过这种方式可以得到Class实例
         String className = "entity.Person3";
-        clazz = Class.forName(className);
-        System.out.println("3.通过全类名:" + clazz);
+        Class clazz4 = Class.forName(className);
+        System.out.println("3.通过全类名:" + clazz4);
     }
 }
