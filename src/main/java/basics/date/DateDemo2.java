@@ -1,5 +1,8 @@
 package basics.date;
 
+import java.util.Date;
+
+import common.DateConstant;
 import utils.DateUtil.DateUtil;
 
 /**
@@ -15,7 +18,13 @@ import utils.DateUtil.DateUtil;
 public class DateDemo2 {
 
 	public static void main(String[] args) {
-		String date = "Tue Mar 05 00:00:00 CST 2019";
-		System.out.println(DateUtil.string2Date(date));
+		String dateStr = "Tue Mar 05 00:00:00 CST 2019";
+		System.out.println(DateUtil.string2Date(dateStr));
+
+		Date date = DateUtil.getCurrentDate();
+		dateStr = DateUtil.data2String(date, DateConstant.DATE_FORMAT_8);
+		Date date2 = DateUtil.string2Date(dateStr);
+		dateStr = new StringBuilder().append(date2).toString();
+		System.out.println(dateStr);
 	}
 }
