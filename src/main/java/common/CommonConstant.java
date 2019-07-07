@@ -14,4 +14,13 @@ public interface CommonConstant {
 
 	/** 抽象路径前缀 */
 	String FILE_PATH = "D:/stream/";
+
+	/** 抽象路径名前端 */
+	String PATH = "D:";
+
+	/** 临时文件存放位置 */
+	String TEMP_PATH = "临时文件存放位置";
+
+	/** 临时文件二级目录 */
+	String TEMP_SECOND_PATH = "文件目录";
 }

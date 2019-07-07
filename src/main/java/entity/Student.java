@@ -3,6 +3,11 @@ package entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.RandomAccessFile;
+
 /**
  * <Description> <br>
  *
@@ -22,6 +27,8 @@ public class Student extends Person3 {
     public String name;
 
     protected int age;
+
+    transient private String address;
 
     char sex;
 
@@ -57,8 +64,14 @@ public class Student extends Person3 {
     }
 
     public Student(String name, int age, int score) {
-        super(name, age);
+        // super(name, age);
+        this.name = name;
+        this.age = age;
         this.score = score;
+    }
+    public Student(String name, int age, int score, String address) {
+        this(name, age, score);
+        this.address = address;
     }
 
     /**
@@ -84,5 +97,32 @@ public class Student extends Person3 {
     private String show4(int age) {
         System.out.println("调用：私有、有返回值、int参数的show4(),age = " + age);
         return age + "";
+    }
+
+    public void write(RandomAccessFile randomAccessFile) throws IOException {
+        randomAccessFile.writeUTF(name);
+        randomAccessFile.writeInt(age);
+        randomAccessFile.writeInt(score);
+    }
+
+    public void read(RandomAccessFile randomAccessFile) throws IOException {
+        this.name = randomAccessFile.readUTF();
+        this.age = randomAccessFile.readInt();
+        this.score = randomAccessFile.readInt();
+    }
+
+    private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
+        System.out.println("writeObject.......................");
+        objectOutputStream.writeInt(age);
+        // objectOutputStream.writeInt(score);
+        objectOutputStream.writeObject(new StringBuffer(address).reverse());
+        objectOutputStream.writeUTF(name);
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+        System.out.println("readObject......................");
+        this.age = objectInputStream.readInt();
+        this.address = ((StringBuffer) objectInputStream.readObject()).toString();
+        this.name = objectInputStream.readUTF();
     }
 }
