@@ -28,4 +28,12 @@ public class SuperStorageAdapter implements IMobileStorage {
     public void write() {
         this.superStorage.wt();
     }
+
+    public SuperStorage getSuperStorage() {
+        return superStorage;
+    }
+
+    public void setSuperStorage(SuperStorage superStorage) {
+        this.superStorage = superStorage;
+    }
 }
