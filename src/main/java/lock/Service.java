@@ -20,14 +20,14 @@ public class Service {
     static {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         // 设置最大连接数
-        jedisPoolConfig.setMaxTotal(200);
+        // jedisPoolConfig.setMaxTotal(200);
         // 设置最大空闲数
-        jedisPoolConfig.setMaxIdle(8);
+        // jedisPoolConfig.setMaxIdle(8);
         // 设置最大等待时间
-        jedisPoolConfig.setMaxWaitMillis(1000 * 100);
+        // jedisPoolConfig.setMaxWaitMillis(1000 * 100);
         // 在borrow一个jedis实例时，是否需要验证，若为true，则所有jedis实例都是可用的
-        jedisPoolConfig.setTestOnBorrow(true);
-        jedisPool = new JedisPool(jedisPoolConfig, "127.0.0.1", 6379, 3000);
+        // jedisPoolConfig.setTestOnBorrow(true);
+        // jedisPool = new JedisPool(jedisPoolConfig, "127.0.0.1", 6379, 3000);
     }
 
     DistributedLock distributedLock = new DistributedLock(jedisPool);

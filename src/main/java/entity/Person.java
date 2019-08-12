@@ -68,4 +68,44 @@ public class Person extends AbstractVo {
 				", age=" + age +
 				'}';
 	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public static String getName1() {
+		return name1;
+	}
+
+	public static void setName1(String name1) {
+		Person.name1 = name1;
+	}
+
+	public static String getName2() {
+		return name2;
+	}
+
+	public static void setName2(String name2) {
+		Person.name2 = name2;
+	}
+
+	public int[] getSum() {
+		return sum;
+	}
+
+	public void setSum(int[] sum) {
+		this.sum = sum;
+	}
+
+	public static String getCountry() {
+		return country;
+	}
+
+	public static void setCountry(String country) {
+		Person.country = country;
+	}
 }

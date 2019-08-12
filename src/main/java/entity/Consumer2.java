@@ -34,4 +34,20 @@ public class Consumer2 extends AbstractVo implements Runnable {
 	public void run() {
 		storage.consume(num);
 	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	public Storage getStorage() {
+		return storage;
+	}
+
+	public void setStorage(Storage storage) {
+		this.storage = storage;
+	}
 }

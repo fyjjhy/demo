@@ -33,4 +33,12 @@ public class Computer {
     public void writeData() {
         this.iMobileStorage.write();
     }
+
+    public IMobileStorage getiMobileStorage() {
+        return iMobileStorage;
+    }
+
+    public void setiMobileStorage(IMobileStorage iMobileStorage) {
+        this.iMobileStorage = iMobileStorage;
+    }
 }
