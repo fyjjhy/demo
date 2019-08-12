@@ -35,10 +35,12 @@ public class Consumer extends AbstractVo implements Runnable {
 					System.out.println("queue is empty");
 					try {
 						queue.wait();
+						System.out.println("消费1");
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
+				System.out.println("消费2");
 				int v = queue.remove();
 				System.out.println("consume" + v);
 				queue.notifyAll();
