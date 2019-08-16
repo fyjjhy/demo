@@ -19,16 +19,17 @@ public class GzDemo3 {
 
     public static void main(String[] args) throws IOException {
         String userHome = System.getProperty("user.home");
-        String path = new StringBuilder(userHome).append("/log/hbasesoft/ability-integration-service/trans.json.2019-07-29.gz").toString();
+        String path = new StringBuilder(userHome).append("/log/hbasesoft/ability-integration-service/trans.json.2019-08-01.gz").toString();
         // 对应的行数99行
         // Unexpected end of ZLIB input stream
-        long filePointer = 10L;
+        long filePointer = 6437L;
         BufferedReader bufferedReader = new BufferedReader(
-                new InputStreamReader(new GZIPInputStream(new FileInputStream(path))));
-        bufferedReader.skip(filePointer);
+                new InputStreamReader(new GZIPInputStream(new FileInputStream(path))), 10 * 1024 * 1024);
+        // bufferedReader.skip(filePointer);
         long i = 0;
         while (StringUtils.isNotEmpty(bufferedReader.readLine())) {
-            if ((++i) % 1000 == 0) {
+            System.out.println("正在读取" + ++i + "行数据。");
+            if (i % 1000 == 0) {
                 System.out.println("已读取" + i + "行数据。");
             }
         }
