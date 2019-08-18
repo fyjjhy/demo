@@ -44,8 +44,8 @@ public class StringDemo13 {
                 "c6e42dfacb9dd3212c141be\",\"parentStackId\":\"\",\"method\":\"com.hbasesoft.framework.message.core.event.EventLinsener<onMessage>(java.lang.String,[B)\",\"params\":\"[_LOG_DATA, [B@359e48b8]\",\"returnValue\":\"\n" +
                 "\",\"consumeTime\":\"\",\"exception\":\"\",\"rest\":\"BEFORE\",\"spId\":\"\",\"channel\":\"\"}]";
         String str1 = StringEscapeUtils.unescapeJava(params);
-        String str2 = StringEscapeUtils.unescapeJson(params);
-        System.out.println(str2);
+        // String str2 = StringEscapeUtils.unescapeJson(params);
+        // System.out.println(str2);
         System.out.println(str1);
     }
 }

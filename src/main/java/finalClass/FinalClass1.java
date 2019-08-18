@@ -10,11 +10,11 @@ package finalClass;
  * @see finalClass <br>
  * @since V1.0 <br>
  */
-public final class FinalClass {
+public final class FinalClass1 {
     private final int[] myArray;
 
-    public FinalClass(int[] array) {
-        this.myArray = array;
+    public FinalClass1(int[] array) {
+        this.myArray = array.clone();
     }
 
     public int[] getMyArray() {

@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class FinalDemo01 {
     public static void main(String[] args) {
         int[] array = { 1, 2, 3 };
-        FinalClass finalClass = new FinalClass(array);
+        FinalClass1 finalClass = new FinalClass1(array);
         array[0] = 2;
         System.out.println(Arrays.toString(array));
         int[] arr = finalClass.getMyArray();
