@@ -32,7 +32,7 @@ public class LiveLockDemo01 {
 
         // 表示正在用餐
         public void use() {
-            System.out.println(owner.getName() + "use this spoon and finish eat.");
+            System.out.println(owner.getName() + "正在用餐。");
         }
     }
 
@@ -60,20 +60,24 @@ public class LiveLockDemo01 {
 
         // 可以理解为和某人吃饭
         public void eatWith(Diner spouse, Spoon sharedSpoon) {
-            System.out.println("spouse: name = " + spouse.getName() + ", isHungry = " + spouse.isHungry() + "; sharedSpoon: owner = " + sharedSpoon.getOwnerName());
-            System.out.println("name: " + name + ", isHungry: " + isHungry);
+            System.out.println("当前线程: " + Thread.currentThread().getName() + ", 与当前用餐者的名字: " + spouse.getName() +
+                    ", isHungry:" + spouse.isHungry() + "; 勺子的拥有者: " + sharedSpoon.getOwnerName());
             try {
                 synchronized (sharedSpoon) {
                     while (isHungry) {
+                        System.out.println("当前线程: " + Thread.currentThread().getName() + ", 当前用餐者的名字: " + name + ", isHungry:" + isHungry);
                         // 当前用餐者和勺子拥有者不是同一个人，则进行等待
                         while (!sharedSpoon.getOwnerName().equals(name)) {
+                            System.out.println("当前线程: " + Thread.currentThread().getName() + ", wait()。");
                             sharedSpoon.wait();
-                            System.out.println("sharedSpoon belongs to " + sharedSpoon.getOwnerName());
+                            System.out.println("当前线程: " + Thread.currentThread().getName() + ", sharedSpoon belongs to " + sharedSpoon.getOwnerName());
+                            System.out.println("当前线程: " + Thread.currentThread().getName() + ", 当前用餐者的名字: " + name + ", 勺子拥有者: " + sharedSpoon.getOwnerName());
                         }
                         // spouse此时饿了，把勺子给他，并通知他可以用餐
                         if (spouse.isHungry) {
-                            System.out.println("I am " + name + ", and my " + spouse.getName() + " is hungry, I should give it to him(her).\n");
+                            System.out.println("当前线程: " + Thread.currentThread().getName() + ", 勺子的拥有者 " + sharedSpoon.getOwnerName() + ", 与当前用餐者 " + spouse.getName() + " is hungry, I should give it to him(her).\n");
                             sharedSpoon.setOwner(spouse);
+                            System.out.println("当前线程: " + Thread.currentThread().getName() + ", 修改当前的勺子的拥有者：" + spouse.getName());
                             sharedSpoon.notifyAll();
                         }
                         else {
@@ -86,34 +90,34 @@ public class LiveLockDemo01 {
                     }
                 }
             } catch (InterruptedException e) {
-                System.out.println(name + "is interrupted");
+                System.out.println("当前线程: " + Thread.currentThread().getName() + ", " + name + "is interrupted");
             }
         }
     }
 
     public static void main(String[] args) {
         // 创建一个丈夫用餐类
-        final Diner husband = new Diner(true, "husband");
+        final Diner husband = new Diner(true, "丈夫");
         // 创建一个妻子用餐类
-        final Diner wife = new Diner(true, "wife");
+        final Diner wife = new Diner(true, "妻子");
         // 创建一个勺子，初始状态并由妻子持有
         final Spoon sharedSpoon = new Spoon(wife);
 
         // 创建一个线程，由丈夫进行用餐
-        Thread h = new Thread(){
+        Thread h = new Thread("丈夫"){
             @Override
             public void run() {
-                // 表示和妻子用餐，这个过程判断妻子是否饿了，如果是，则会把勺子分给妻子，并通知她
+                // 表示丈夫和妻子用餐，这个过程判断妻子是否饿了，如果是，则会把勺子分给妻子，并通知她
                 husband.eatWith(wife, sharedSpoon);
             }
         };
         h.start();
 
         // 创建一个线程，由妻子进行用餐
-        Thread w = new Thread() {
+        Thread w = new Thread("妻子") {
             @Override
             public void run() {
-                // 表示和妻子用餐，这个过程判断丈夫是否饿了，如果是，则会把勺子分给丈夫，并通知他
+                // 表示妻子和丈夫用餐，这个过程判断丈夫是否饿了，如果是，则会把勺子分给丈夫，并通知他
                 wife.eatWith(husband, sharedSpoon);
             }
         };
