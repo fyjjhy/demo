@@ -32,6 +32,7 @@ public class MyThread17_Anonymous {
 //            }
 //        }).start();
 
+        // 基于接口实现的Lambda函数
         new Thread(() -> {
             while (true) {
                 printThreadInfo();

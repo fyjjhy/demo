@@ -1,7 +1,7 @@
 package thread;
 
 /**
- * <Description> <br>
+ * <Description> 继承Thread类<br>
  *
  * @author 付永杰<br>
  * @version 1.0<br>
