@@ -2,7 +2,7 @@ package design_patterns.chain;
 
 /**
  * <Description> 抽象处理者模式<br>
- *
+ * 抽象处理者角色类
  * @author 付永杰<br>
  * @version 1.0<br>
  * @taskId <br>
@@ -27,4 +27,6 @@ public abstract class Handler {
     public void setSuccessor(Handler successor) {
         this.successor = successor;
     }
+
+    public abstract String handleFeeRequest(String user, double fee);
 }
