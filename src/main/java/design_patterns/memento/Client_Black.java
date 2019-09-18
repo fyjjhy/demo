@@ -15,7 +15,7 @@ public class Client_Black {
     public static void main(String[] args) {
         Originator_Black originatorBlack = new Originator_Black();
         Caretaker_Black caretakerBlack = new Caretaker_Black();
-        // 改变负责人对象的状态
+        // 改变发起人对象的状态
         originatorBlack.setState("On");
         System.out.println("1:" + originatorBlack.getState());
         // 创建备忘录对象，并将发起人对象的状态存储起来

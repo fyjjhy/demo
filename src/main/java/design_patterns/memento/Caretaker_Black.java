@@ -11,15 +11,15 @@ package design_patterns.memento;
  * @since V1.0 <br>
  */
 public class Caretaker_Black {
-    private MementoIF mementoIF;
+    private MementoIF_Black mementoIF;
 
     // 备忘录取值方法
-    public MementoIF retrieveMemento() {
+    public MementoIF_Black retrieveMemento() {
         return mementoIF;
     }
 
     // 备忘录赋值方法
-    public void saveMemento(MementoIF mementoIF) {
+    public void saveMemento(MementoIF_Black mementoIF) {
         this.mementoIF = mementoIF;
     }
 }

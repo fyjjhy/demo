@@ -10,17 +10,17 @@ package design_patterns.memento;
  * @see design_patterns.memento <br>
  * @since V1.0 <br>
  */
-public class Originator {
+public class Originator_White {
 
     private String state;
 
     // 返回一个新的备忘录对象
-    public Memento createMemento() {
-        return new Memento(state);
+    public Memento_White createMemento() {
+        return new Memento_White(state);
     }
 
     // 将发起人恢复到备忘录对象所记载的状态
-    public void restoreMemento(Memento memento) {
+    public void restoreMemento(Memento_White memento) {
         this.state = memento.getState();
     }
 

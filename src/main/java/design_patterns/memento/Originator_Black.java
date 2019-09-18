@@ -23,16 +23,16 @@ public class Originator_Black {
     }
 
     // 工厂方法，返还一个新的备忘录对象
-    public MementoIF createMemento() {
+    public MementoIF_Black createMemento() {
         return new Memento(state);
     }
 
     // 发起人恢复到备忘录对象记录的状态
-    public void restoreMemento(MementoIF mementoIF) {
+    public void restoreMemento(MementoIF_Black mementoIF) {
         this.setState(((Memento)mementoIF).getState());
     }
 
-    private class Memento implements MementoIF {
+    private class Memento implements MementoIF_Black {
         private String state;
 
         private Memento(String state) {

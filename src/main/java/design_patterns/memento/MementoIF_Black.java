@@ -10,5 +10,5 @@ package design_patterns.memento;
  * @see design_patterns.memento <br>
  * @since V1.0 <br>
  */
-public interface MementoIF {
+public interface MementoIF_Black {
 }

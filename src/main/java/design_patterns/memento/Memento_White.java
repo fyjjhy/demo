@@ -10,10 +10,10 @@ package design_patterns.memento;
  * @see design_patterns.memento <br>
  * @since V1.0 <br>
  */
-public class Memento {
+public class Memento_White {
     private String state;
 
-    public Memento(String state) {
+    public Memento_White(String state) {
         this.state = state;
     }
 
