@@ -24,5 +24,11 @@ public class ListDemo3 {
 		int count = list.size() / pageSize;
 		List<String> subList = list.subList(count * pageSize, list.size());
 		System.out.println(subList.toString());
+
+		int oldCapacity = 9;
+		int newCapacity = oldCapacity + (oldCapacity >> 1);
+		System.out.println(newCapacity);
+		System.out.println(Integer.MAX_VALUE * 2);
+		System.out.println(Integer.MIN_VALUE * 2);
 	}
 }
